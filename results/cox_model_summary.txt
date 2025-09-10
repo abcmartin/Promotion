@@ -1,0 +1,26 @@
+Call:
+coxph(formula = cox_formula, data = patients)
+
+  n= 78, number of events= 40 
+
+                   coef  exp(coef)   se(coef)      z Pr(>|z|)  
+cd44_status1 -1.466e+00  2.309e-01  6.275e-01 -2.336   0.0195 *
+hpv16_status -5.914e-01  5.535e-01  3.844e-01 -1.539   0.1239  
+age          -3.271e-02  9.678e-01  1.093e-01 -0.299   0.7646  
+t_stage       1.080e-01  1.114e+00  4.966e-01  0.217   0.8278  
+n_stage       2.288e+01  8.615e+09  5.730e+03  0.004   0.9968  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+             exp(coef) exp(-coef) lower .95 upper .95
+cd44_status1 2.309e-01  4.331e+00    0.0675    0.7899
+hpv16_status 5.535e-01  1.807e+00    0.2606    1.1758
+age          9.678e-01  1.033e+00    0.7812    1.1989
+t_stage      1.114e+00  8.976e-01    0.4209    2.9485
+n_stage      8.615e+09  1.161e-10    0.0000       Inf
+
+Concordance= 0.829  (se = 0.031 )
+Likelihood ratio test= 66.23  on 5 df,   p=6e-13
+Wald test            = 8.63  on 5 df,   p=0.1
+Score (logrank) test = 60.28  on 5 df,   p=1e-11
+

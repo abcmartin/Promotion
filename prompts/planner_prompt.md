@@ -1,0 +1,3 @@
+# Planner Prompt
+
+Analysiere den Abschnitt `<section_id>` des Manuskripts und erstelle einen strukturierten Arbeitsplan. Führe eine Gap‑Analyse durch (Inhalt, Methoden, Statistik, Terminologie) und definiere klare, messbare Ziele sowie erforderliche Aufgaben. Entwickle einen Evidenzplan mit PubMed‑Suchanfragen (Impact Factor ≥ 5) und definiere Akzeptanzkriterien. Gib Risiken und eine Zielwortzahl vor. Lege deinen Plan im YAML‑Format als `planner_output` vor.

@@ -1,0 +1,34 @@
+$kappa
+ Cohen's Kappa for 2 Raters (Weights: unweighted)
+
+ Subjects = 78 
+   Raters = 2 
+    Kappa = 1 
+
+        z = 11.4 
+  p-value = 0 
+
+$weighted_kappa
+ Cohen's Kappa for 2 Raters (Weights: squared)
+
+ Subjects = 78 
+   Raters = 2 
+    Kappa = 1 
+
+        z = 8.83 
+  p-value = 0 
+
+$icc
+Call: ICC(x = as.data.frame(cont_data))
+
+Intraclass correlation coefficients 
+                         type ICC    F df1 df2        p lower bound upper bound
+Single_raters_absolute   ICC1   1 1937  77  78 9.7e-107           1           1
+Single_random_raters     ICC2   1 2953  77  77 1.7e-112           1           1
+Single_fixed_raters      ICC3   1 2953  77  77 1.7e-112           1           1
+Average_raters_absolute ICC1k   1 1937  77  78 9.7e-107           1           1
+Average_random_raters   ICC2k   1 2953  77  77 1.7e-112           1           1
+Average_fixed_raters    ICC3k   1 2953  77  77 1.7e-112           1           1
+
+ Number of subjects = 78     Number of Judges =  2
+See the help file for a discussion of the other 4 McGraw and Wong estimates,

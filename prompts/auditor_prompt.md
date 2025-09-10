@@ -1,0 +1,3 @@
+# Auditor Prompt
+
+Prüfe den vom Planner erstellten `planner_output` für den Abschnitt `<section_id>` streng wissenschaftlich. Bewerte die Logik, Evidenz und Methodik. Überprüfe, ob die geplanten Quellen aktuell sind (Impact Factor ≥ 5), ob statistische Konzepte korrekt angewendet werden und ob die Ziele realistisch sind. Erstelle ein JSON‑basiertes `auditor_report` mit Findings (blocker/major/minor) und formuliere Korrekturvorschläge. Gib an, ob der Abschnitt freigegeben werden kann (`approved`: true/false).

@@ -1,0 +1,3 @@
+# Executor Prompt
+
+Setze den `planner_output` und das `auditor_report` für den Abschnitt `<section_id>` um. Überarbeite den Text vollständig, so dass er präzise, kohärent und APA‑7‑konform ist. Verwende medizinisch‑wissenschaftliche Terminologie, halte die Formatvorgaben ein und füge hochwertige Quellen (DOI/PMID) ein. Dokumentiere jede Änderung im `change_log` (JSON), inklusive Ort, Art der Änderung, Begründung und hinzugefügten Quellen. Liefere den überarbeiteten Abschnitt als Markdown und das `change_log`.
