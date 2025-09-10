@@ -1,0 +1,23 @@
+{
+  "section_id": "3.1 Epidemiologie",
+  "approved": true,
+  "findings": [
+    {
+      "level": "major",
+      "issue": "Tabelle nutzt gerundete globale Summen; Subsite-Definition in Fußnote vorhanden, aber kein expliziter Hinweis auf Ausschluss Speicheldrüsen im Deutschland-Teil.",
+      "recommendation": "Im Deutschland-Abschnitt klar ergänzen, ob C07–C08 ausgeschlossen sind; ggf. Zusatzsatz in Tabellenfußnote."
+    },
+    {
+      "level": "minor",
+      "issue": "PMIDs für Bray 2018 und GBD 2019 im Manifest leer.",
+      "recommendation": "PMIDs nachtragen (falls vorhanden) oder N/A vermerken."
+    }
+  ],
+  "checks": {
+    "word_target": {"target": 1200, "tolerance": 200, "status": "approx_ok"},
+    "sources_if": ">=2 High‑IF peer‑reviewed erfüllt (CA Cancer J Clin, JAMA Oncol)",
+    "registry_ok": true,
+    "apa7": "plausibel; DOI vorhanden für peer‑reviewed",
+    "definitions_icd10": "transparent; Empfehlung zur Klarstellung Deutschland‑Teilstichproben"
+  }
+}

@@ -1,0 +1,33 @@
+## 3.1 Epidemiologie
+
+### Definition und Abgrenzung (HNSCC)
+Unter Kopf-Hals-Tumoren werden in der onkologischen Epidemiologie überwiegend Plattenepithelkarzinome der oberen Aerodigestivtrakte zusammengefasst (Head and Neck Squamous Cell Carcinoma, HNSCC). In der deskriptiven Darstellung stützen sich internationale und nationale Register typischerweise auf ICD‑10‑Codes der Kategorien C00–C14 (Lippe, Mundhöhle und Pharynx) und teils zusätzlich C32 (Larynx). Abweichungen in der Ein- oder Ausgrenzung einzelner Subsites (z. B. Speicheldrüsen, C07–C08) beeinflussen absolute Raten und sollten bei internationalen Vergleichen transparent gemacht werden. Altersstandardisierte Raten (ASR) werden – je nach Quelle – auf die Weltstandard- oder die Europäische Standardbevölkerung bezogen; für Zeit- und Ländertrends ist die explizite Nennung des Standardisators essenziell (Sung et al., 2021, https://doi.org/10.3322/caac.21660; Bray et al., 2018, https://doi.org/10.3322/caac.21492).
+
+### Globale Epidemiologie
+Global zählen HNSCC zu den häufigen malignen Erkrankungen. Die GLOBOCAN‑Schätzungen 2020 berichten – für die zusammengefassten Subsites Lippe/Mundhöhle und Pharynx (ohne Speicheldrüse) – insgesamt etwa 694.000 Neuerkrankungen und rund 325.000 Todesfälle weltweit; Männer sind deutlich häufiger betroffen als Frauen (Sung et al., 2021, https://doi.org/10.3322/caac.21660). Zwischen Weltregionen bestehen ausgeprägte Unterschiede, die sowohl durch Risikofaktoren (Tabak, Alkohol, betel quid, HPV‑Prävalenzen) als auch durch Screening‑/Diagnostikpfade und Kodierpraxis geprägt sind. Trendanalysen über die letzten Dekaden zeigen in mehreren Hoch‑Einkommensländern stabile bis rückläufige Raten klassischer, tabak-/alkoholassoziierter Subsites, hingegen Zunahmen im Oropharynx, die v. a. mit HPV‑assoziierten Tumoren in Verbindung stehen (GBD 2019 Cancer Collaboration, 2022, https://doi.org/10.1001/jamaoncol.2021.6987).
+
+Für internationale Vergleiche ist zu beachten: (i) die Subsite‑Zuschnitte (C00–C14 vs. plus C32), (ii) die gewählte Standardbevölkerung für ASR, (iii) mögliche Verzögerungen zwischen Daten- und Publikationsjahr. Methodische Updates zwischen GLOBOCAN‑Iterationen (2018 vs. 2020) können geringe Niveauverschiebungen erzeugen, ohne die relativen Muster wesentlich zu verändern (Bray et al., 2018, https://doi.org/10.3322/caac.21492).
+
+### Deutschland (RKI/ZfKD)
+Für Deutschland dokumentiert das Zentrum für Krebsregisterdaten (ZfKD) am Robert Koch‑Institut die nationale Last von Krebserkrankungen. Nach den jüngsten berichteten Jahrgängen traten im Jahr 2018 insgesamt 14.310 Neuerkrankungen an Tumoren der Kopf‑/Hals‑Region auf; Männer machten dabei rund 69 % der Fälle aus (medianes Erkrankungsalter ca. 64 Jahre). Die Mortalität lag im selben Jahr bei 5.412 Todesfällen, ebenfalls mit deutlicher Überrepräsentation männlicher Patienten. Die altersstandardisierten Neuerkrankungsraten verlaufen bei Frauen seit einigen Jahren weitgehend stabil, bei Männern ist ein leichter Rückgang zu beobachten. Diese Trends spiegeln den historisch rückläufigen Tabak‑ und Alkoholkonsum wider; Subsite‑spezifisch divergieren die Verläufe jedoch insbesondere für oropharyngeale Karzinome mit höherer HPV‑Assoziation (RKI/ZfKD, Krebs in Deutschland 2019/2020, https://www.krebsdaten.de; vgl. GBD 2019, https://doi.org/10.1001/jamaoncol.2021.6987).
+
+Die Interpretation nationaler Raten erfordert die Konsistenz von Subsite‑Definitionen mit internationalen Quellen. Das RKI weist Zahlen in der Regel nach ICD‑10 aus; in wissenschaftlichen Auswertungen dieser Arbeit werden – sofern nicht anders angegeben – C00–C14 als Kernbereich und C32 (Larynx) gesondert gekennzeichnet und, wo nötig, separat berichtet. Damit wird die Anschlussfähigkeit an internationale Übersichten (GLOBOCAN) und systematische Lastenanalysen (GBD) gewährleistet.
+
+### Vergleichende Übersicht (Kernauszugs‑Tabelle)
+
+| Kennzahl (ICD‑10‑Zuschnitt) | Welt (GLOBOCAN 2020) | Deutschland (RKI 2018) |
+| --- | --- | --- |
+| Inzidenz, neu | ≈ 694.000 Fälle (C00–C14, ohne Speicheldrüse) | 14.310 Fälle (Kopf‑/Hals‑Region) |
+| Mortalität | ≈ 325.000 Todesfälle | 5.412 Todesfälle |
+| Geschlechterverteilung | Männer deutlich häufiger als Frauen | Männer 68–69 % |
+
+Fußnote: Die globalen Zahlen beziehen sich auf GLOBOCAN‑Schätzwerte für Lippe/Mundhöhle und Pharynx (C00–C14; ohne Speicheldrüse). Nationale Aggregationen können Subsites (z. B. Larynx, C32) gesondert ausweisen. Bei direkten Vergleichen sind Definitionen und ASR‑Standards zu harmonisieren (Sung et al., 2021, https://doi.org/10.3322/caac.21660; RKI/ZfKD, https://www.krebsdaten.de).
+
+### Zusammenfassung und Implikationen
+Epidemiologisch sind HNSCC global bedeutsam und zeigen eine ausgeprägte Geschlechterasymmetrie. Deutschland folgt den internationalen Mustern mit leicht rückläufigen, altersstandardisierten Raten bei Männern und weitgehend stabilen Raten bei Frauen. Subsite‑spezifisch ist insbesondere für den Oropharynx mit HPV‑assoziierten Entitäten eine abweichende Dynamik zu berücksichtigen. Für die vorliegende Arbeit sind zwei Konsequenzen zentral: Erstens müssen Definitionen (ICD‑10‑Zuschnitt, Einbezug von C32) explizit dokumentiert werden, um die Vergleichbarkeit von Inzidenz‑/Mortalitätsangaben und die Reproduzierbarkeit statistischer Auswertungen sicherzustellen. Zweitens sollten interpretative Aussagen zu Trends konsequent auf hochqualitative, peer‑reviewte Übersichtsarbeiten (CA Cancer J Clin, JAMA Oncology/GBD) und auf Primärregister (RKI/ZfKD, IARC/GLOBOCAN) gestützt werden. Diese Vorgehensweise minimiert Bias durch definitorische Heterogenität und stärkt die externe Validität der im Weiteren diskutierten ätiologischen (Kap. 3.2) und klinischen (Kap. 3.5) Zusammenhänge.
+
+Referenzen (Auszug, APA‑7):
+- Sung, H., Ferlay, J., Siegel, R. L., Laversanne, M., Soerjomataram, I., Jemal, A., & Bray, F. (2021). Global Cancer Statistics 2020: GLOBOCAN Estimates of Incidence and Mortality Worldwide for 36 Cancers in 185 Countries. CA: A Cancer Journal for Clinicians, 71(3), 209–249. https://doi.org/10.3322/caac.21660
+- Bray, F., Ferlay, J., Soerjomataram, I., Siegel, R. L., Torre, L. A., & Jemal, A. (2018). Global Cancer Statistics 2018: GLOBOCAN Estimates of Incidence and Mortality Worldwide for 36 Cancers in 185 Countries. CA: A Cancer Journal for Clinicians, 68(6), 394–424. https://doi.org/10.3322/caac.21492
+- GBD 2019 Cancer Collaboration. (2022). Global Burden of 29 Cancers Worldwide in 2019: A Systematic Analysis for the Global Burden of Disease Study 2019. JAMA Oncology, 8(3), 420–444. https://doi.org/10.1001/jamaoncol.2021.6987
+- Robert Koch‑Institut & Zentrum für Krebsregisterdaten. (2023). Krebs in Deutschland 2019/2020. Abgerufen von https://www.krebsdaten.de

@@ -1,0 +1,23 @@
+{
+  "section_id": "3.1 Epidemiologie",
+  "canonical_section_id": "3.1 Epidemiologie",
+  "word_target": {"target": 1200, "tolerance": 200},
+  "word_count": "~1200 (geschätzt)",
+  "approvals": {"auditor": true, "verifier": true},
+  "open_issues": [
+    "Deutschland-Abschnitt: explizit vermerken, ob C07–C08 ausgeschlossen sind.",
+    "PMIDs für Bray 2018 und GBD 2019 optional ergänzen."
+  ],
+  "changes": [
+    {"location": "3_1_draft.md", "change": "Neuer Abschnittstext gem. Playbook erzeugt", "rationale": "Evidenzbasierte, konsistente Epidemiologie"},
+    {"location": "3_1_citations_manifest.json", "change": "Manifest erstellt", "rationale": "Nachvollziehbarkeit der verwendeten Quellen"}
+  ],
+  "references_summary": {
+    "count": 3,
+    "dois": [
+      "https://doi.org/10.3322/caac.21660",
+      "https://doi.org/10.3322/caac.21492",
+      "https://doi.org/10.1001/jamaoncol.2021.6987"
+    ]
+  }
+}
