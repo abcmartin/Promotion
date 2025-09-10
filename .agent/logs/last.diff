@@ -1,0 +1,10 @@
+--- a//workspace/manuscript/placeholder.md
++++ b//workspace/manuscript/placeholder.md
+@@ -3,3 +3,7 @@
+ 
+ 
+ This file ensures the applyTo glob "manuscript/**/*.md" matches at least one file.
++
++
++[Hinweis]: Quelle(n) erg
++nzen (PMID vorschlagen).

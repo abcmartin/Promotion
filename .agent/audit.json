@@ -1,0 +1,168 @@
+{
+  "issues": [
+    {
+      "id": "/workspace/manuscript/0_cover.md#1-2",
+      "type": "citation_missing",
+      "message": "Keine Quelle/Zitation erkannt."
+    },
+    {
+      "id": "/workspace/manuscript/1_abstract.md#1-2",
+      "type": "citation_missing",
+      "message": "Keine Quelle/Zitation erkannt."
+    },
+    {
+      "id": "/workspace/manuscript/1_abstract.md#3-14",
+      "type": "style_long_sentences",
+      "message": "Viele sehr lange S\u001ftze."
+    },
+    {
+      "id": "/workspace/manuscript/1_abstract.md#3-14",
+      "type": "style_passive",
+      "message": "Vermutete Passivh\u001fufung."
+    },
+    {
+      "id": "/workspace/manuscript/1_abstract.md#27-28",
+      "type": "citation_missing",
+      "message": "Keine Quelle/Zitation erkannt."
+    },
+    {
+      "id": "/workspace/manuscript/1_abstract.md#29-40",
+      "type": "style_long_sentences",
+      "message": "Viele sehr lange S\u001ftze."
+    },
+    {
+      "id": "/workspace/manuscript/1_abstract.md#29-40",
+      "type": "style_passive",
+      "message": "Vermutete Passivh\u001fufung."
+    },
+    {
+      "id": "/workspace/manuscript/1_abstract.md#41-51",
+      "type": "style_passive",
+      "message": "Vermutete Passivh\u001fufung."
+    },
+    {
+      "id": "/workspace/manuscript/3_background.md#1-2",
+      "type": "citation_missing",
+      "message": "Keine Quelle/Zitation erkannt."
+    },
+    {
+      "id": "/workspace/manuscript/3_background.md#3-262",
+      "type": "style_long_sentences",
+      "message": "Viele sehr lange S\u001ftze."
+    },
+    {
+      "id": "/workspace/manuscript/3_background.md#3-262",
+      "type": "style_passive",
+      "message": "Vermutete Passivh\u001fufung."
+    },
+    {
+      "id": "/workspace/manuscript/3_background.md#263-268",
+      "type": "style_long_sentences",
+      "message": "Viele sehr lange S\u001ftze."
+    },
+    {
+      "id": "/workspace/manuscript/3_background.md#269-278",
+      "type": "style_long_sentences",
+      "message": "Viele sehr lange S\u001ftze."
+    },
+    {
+      "id": "/workspace/manuscript/3_background.md#269-278",
+      "type": "style_passive",
+      "message": "Vermutete Passivh\u001fufung."
+    },
+    {
+      "id": "/workspace/manuscript/3_background.md#279-355",
+      "type": "style_passive",
+      "message": "Vermutete Passivh\u001fufung."
+    },
+    {
+      "id": "/workspace/manuscript/4_question.md#1-23",
+      "type": "style_long_sentences",
+      "message": "Viele sehr lange S\u001ftze."
+    },
+    {
+      "id": "/workspace/manuscript/4_question.md#1-23",
+      "type": "style_passive",
+      "message": "Vermutete Passivh\u001fufung."
+    },
+    {
+      "id": "/workspace/manuscript/5_material_methods.md#1-2",
+      "type": "citation_missing",
+      "message": "Keine Quelle/Zitation erkannt."
+    },
+    {
+      "id": "/workspace/manuscript/5_material_methods.md#13-32",
+      "type": "style_long_sentences",
+      "message": "Viele sehr lange S\u001ftze."
+    },
+    {
+      "id": "/workspace/manuscript/5_material_methods.md#13-32",
+      "type": "style_passive",
+      "message": "Vermutete Passivh\u001fufung."
+    },
+    {
+      "id": "/workspace/manuscript/5_material_methods.md#33-78",
+      "type": "style_passive",
+      "message": "Vermutete Passivh\u001fufung."
+    },
+    {
+      "id": "/workspace/manuscript/5_material_methods.md#79-140",
+      "type": "style_passive",
+      "message": "Vermutete Passivh\u001fufung."
+    },
+    {
+      "id": "/workspace/manuscript/6_results.md#1-2",
+      "type": "citation_missing",
+      "message": "Keine Quelle/Zitation erkannt."
+    },
+    {
+      "id": "/workspace/manuscript/6_results.md#3-139",
+      "type": "style_long_sentences",
+      "message": "Viele sehr lange S\u001ftze."
+    },
+    {
+      "id": "/workspace/manuscript/6_results.md#3-139",
+      "type": "style_passive",
+      "message": "Vermutete Passivh\u001fufung."
+    },
+    {
+      "id": "/workspace/manuscript/6_results.md#140-323",
+      "type": "style_long_sentences",
+      "message": "Viele sehr lange S\u001ftze."
+    },
+    {
+      "id": "/workspace/manuscript/6_results.md#140-323",
+      "type": "style_passive",
+      "message": "Vermutete Passivh\u001fufung."
+    },
+    {
+      "id": "/workspace/manuscript/7_discussion_conclusion.md#1-2",
+      "type": "citation_missing",
+      "message": "Keine Quelle/Zitation erkannt."
+    },
+    {
+      "id": "/workspace/manuscript/7_discussion_conclusion.md#3-18",
+      "type": "style_passive",
+      "message": "Vermutete Passivh\u001fufung."
+    },
+    {
+      "id": "/workspace/manuscript/7_discussion_conclusion.md#19-61",
+      "type": "style_long_sentences",
+      "message": "Viele sehr lange S\u001ftze."
+    },
+    {
+      "id": "/workspace/manuscript/7_discussion_conclusion.md#19-61",
+      "type": "style_passive",
+      "message": "Vermutete Passivh\u001fufung."
+    },
+    {
+      "id": "/workspace/manuscript/placeholder.md#2-7",
+      "type": "citation_missing",
+      "message": "Keine Quelle/Zitation erkannt."
+    }
+  ],
+  "summary": {
+    "num_chunks": 28,
+    "num_issues": 32
+  }
+}

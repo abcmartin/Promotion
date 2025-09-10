@@ -1,0 +1,8 @@
+manuscript_dir: /workspace/manuscript
+output_dir: /workspace/.agent
+chunk_level: 2
+targets_json: /workspace/prompts/chapter_word_targets.json
+logs_dir: /workspace/.agent/logs
+entrez_email: your.email@example.com
+entrez_api_key: null
+

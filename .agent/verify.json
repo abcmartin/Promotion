@@ -1,0 +1,75 @@
+{
+  "total_words": 23840,
+  "files": [
+    {
+      "path": "/workspace/manuscript/0_cover.md",
+      "words": 133,
+      "citations": 2,
+      "target_words": null,
+      "within_target": true
+    },
+    {
+      "path": "/workspace/manuscript/1_abstract.md",
+      "words": 1857,
+      "citations": 40,
+      "target_words": null,
+      "within_target": true
+    },
+    {
+      "path": "/workspace/manuscript/2_tabel_of_content.md",
+      "words": 239,
+      "citations": 92,
+      "target_words": null,
+      "within_target": true
+    },
+    {
+      "path": "/workspace/manuscript/3_background.md",
+      "words": 7631,
+      "citations": 471,
+      "target_words": null,
+      "within_target": true
+    },
+    {
+      "path": "/workspace/manuscript/4_question.md",
+      "words": 568,
+      "citations": 7,
+      "target_words": null,
+      "within_target": true
+    },
+    {
+      "path": "/workspace/manuscript/5_material_methods.md",
+      "words": 2490,
+      "citations": 102,
+      "target_words": null,
+      "within_target": true
+    },
+    {
+      "path": "/workspace/manuscript/6_results.md",
+      "words": 4875,
+      "citations": 290,
+      "target_words": null,
+      "within_target": true
+    },
+    {
+      "path": "/workspace/manuscript/7_discussion_conclusion.md",
+      "words": 3206,
+      "citations": 82,
+      "target_words": null,
+      "within_target": true
+    },
+    {
+      "path": "/workspace/manuscript/8_references.md",
+      "words": 2825,
+      "citations": 319,
+      "target_words": null,
+      "within_target": true
+    },
+    {
+      "path": "/workspace/manuscript/placeholder.md",
+      "words": 16,
+      "citations": 0,
+      "target_words": null,
+      "within_target": true
+    }
+  ]
+}
