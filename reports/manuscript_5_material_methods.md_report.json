@@ -1,0 +1,18 @@
+{
+  "section_id": "manuscript/5_material_methods.md",
+  "approvals": {
+    "auditor": true,
+    "verifier": true
+  },
+  "open_issues": [
+    {
+      "severity": "minor",
+      "issue": "Word count 2490 outside [3000, 4000]",
+      "fix": "Adjust section length"
+    }
+  ],
+  "references_summary": {
+    "count": 0,
+    "dois": []
+  }
+}
