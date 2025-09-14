@@ -1,0 +1,12 @@
+{
+  "section_id": "5_material_methods",
+  "timestamp": "2025-09-14T19:14:15.999626Z",
+  "artifacts": {
+    "planner_output": "plans/5_material_methods_planner_output.yaml",
+    "auditor_report": "audit/5_material_methods_auditor_report.json",
+    "draft_markdown": "drafts/5_material_methods_draft.md",
+    "change_log": "drafts/5_material_methods_change_log.json",
+    "citations_manifest": "drafts/5_material_methods_citations_manifest.json",
+    "verification_result": "verify/5_material_methods_verification_result.json"
+  }
+}
