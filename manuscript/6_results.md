@@ -198,7 +198,7 @@ Der potenzielle Tumorstammzellmarker (CSC-Marker) CD44 wurde anhand seiner immun
 | CD44 - | 30 (41,7%) | 1 (50,0%) | 3 (43,9%) | 5 (45,5%) | 21 (40.4%) |
 | Fehlend | 7 (9,7%) | 0 (0,0%) | 1 (14,2%) | 1 (9,1%) | 5 (9.6%) |
 
-Um herauszufinden, ob das Vorhandensein einer CD44-Proteinexpression im Tumorgewebe mit dem klinischen Outcome korreliert, wurden in Abbildung 5‑4 die Ereigniskurven der CD44-positiven und -negativen Patientenkollektive für die loko-regionäre Tumorkontrolle skizziert. Die entsprechenden Überlebenskurven für die sekundären Endpunkte sind in Abbildung 5‑6 dargestellt. Mit Hilfe des Log-Rank Test wurde anschließend jeweils überprüft, ob zwischen den CD44+ und CD44- Ereigniskurven ein signifikanter Unterscheid auf einem Signifikanzniveau von 5% besteht. Die univariaten Analysen zeigen eine signifikante Assoziation der CD44-Proteinexpression mit der loko-regionären Tumorkontrolle (HR 9,09, p = 0,008; siehe Abbildung 5‑4) aber nicht mit den sekundären Endpunkten Fernmetasten-freies Überleben (HR 2,29, p = 0,075) oder Gesamtüberleben (HR 1,78, p = 0,089). Die dazugehörigen Kaplan-Meier Ereigniskurven für die sekundären Endpunkte Fernmetastasen-freies Überleben und Gesamtüberleben sind weiter unten in Abbildung 5‑6 dargestellt.
+Um herauszufinden, ob das Vorhandensein einer CD44-Proteinexpression im Tumorgewebe mit dem klinischen Outcome korreliert, wurden in Abbildung 5‑4 die Ereigniskurven der CD44-positiven und -negativen Patientenkollektive für die loko-regionäre Tumorkontrolle skizziert. Die entsprechenden Überlebenskurven für die sekundären Endpunkte sind in Abbildung 5‑6 dargestellt. Mit Hilfe des Log-Rank Test wurde anschließend jeweils überprüft, ob zwischen den CD44+ und CD44- Ereigniskurven ein signifikanter Unterscheid auf einem Signifikanzniveau von 5% besteht. Die univariaten Analysen zeigen eine signifikante Assoziation der CD44-Proteinexpression mit der loko-regionären Tumorkontrolle (HR 9,09, p = 0,008; siehe Abbildung 5‑4) aber nicht mit den sekundären Endpunkten Fernmetastasen-freies Überleben (HR 2,29, p = 0,075) oder Gesamtüberleben (HR 1,78, p = 0,089). Die dazugehörigen Kaplan-Meier Ereigniskurven für die sekundären Endpunkte Fernmetastasen-freies Überleben und Gesamtüberleben sind weiter unten in Abbildung 5‑6 dargestellt.
 
 >
 >
@@ -238,7 +238,7 @@ Um herauszufinden, ob das Vorhandensein einer CD44-Proteinexpression im Tumorgew
 
 ![Abbildungen/image17.png](Abbildungen/image17.png)
 
-In univariate Analysen wurden das Patientenkollektiv stratifiziert in CD44 positive und negative und die Überlebensdaten der beider Gruppen mit Hilfe des Kaplane-Meier Verfahrens untersucht. Die geschätzten Überlebenszeiten beide Gruppen wurden m.H. des Log-rank Test miteinander verglichen. Die Untersuchung ergab eine ein signifikant besseres klinisches outcome einen hochsignifikanten Überlebensvorteil für Patienten mit p16INK4A- positiven Karzinomen (p < 0,001) (Abb.16A)
+In univariate Analysen wurden das Patientenkollektiv stratifiziert in CD44 positive und negative und die Überlebensdaten der beider Gruppen mit Hilfe des Kaplan-Meier Verfahrens untersucht. Die geschätzten Überlebenszeiten beide Gruppen wurden m.H. des Log-rank Test miteinander verglichen. Die Untersuchung ergab eine ein signifikant besseres klinisches outcome einen hochsignifikanten Überlebensvorteil für Patienten mit p16INK4A- positiven Karzinomen (p < 0,001) (Abb.16A)
 
 ### Eingebettete Reproduktionsausgabe (automatisch erzeugt)
 
@@ -293,10 +293,10 @@ Um zu untersuchen, ob die Proteinexpression von CD44 einen prognostischen Tumors
 
 **Tabelle 5‑10: Hazard Ratio ist ein deskriptives Maß für das Einflussrisiko im Verhältnis zur Referenzgruppe**
 
-| HR = 0 | Ereignisrisiko in beiden Gruppen ungefähr gleich |
+| HR ≈ 1 | Ereignisrisiko in beiden Gruppen ungefähr gleich |
 | --- | --- |
-| HR > 0 | Ereignisrisiko ist im Vergleich zur Referenzgruppe erhöht ✍ schlechteres Überleben (Risikoerhöhung) |
-| HR < 0 | Ereignisrisiko ist im Vergleich zur Referenzgruppe reduziert ✍ besseres Überleben (Risikoreduktion) |
+| HR > 1 | Ereignisrisiko ist im Vergleich zur Referenzgruppe erhöht — schlechteres Überleben (Risikosteigerung) |
+| HR < 1 | Ereignisrisiko ist im Vergleich zur Referenzgruppe reduziert — besseres Überleben (Risikoreduktion) |
 
 Cox-Modelle wurden sowohl für die gesamte Patientenkohorte als auch für die Subgruppe mit HPV16 DNA-negativen Tumoren durchgeführt. Die Ergebnisse sind in zusammengefasst. Da bei den Patienten mit HPV16 DNA-negativen Tumoren kein lokales oder regionales Rezidiv eingetreten war, konnten für den primären Endpunkt in dieser Population keine Ergebnisse für die Cox-Regression ermittelt werden.
 
