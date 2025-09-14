@@ -18,3 +18,20 @@ Dieses Verzeichnis enthält eine Sammlung von **Custom Instructions** und **Prom
 3. **Chat‑Konfiguration**: In Copilot Chat kannst du gezielt einzelne Instructions anhängen (Configure Chat → Instructions) oder die automatische Anwendung über die `applyTo`‑Muster nutzen.
 4. **Kapitelweise Arbeit**: Befolge die Workflows Planner → Auditor → Executor → Verifier. Nutze die Prompts aus dem `prompts`‑Ordner als Startpunkt für deine Chat‑Interaktionen.
 5. **Weitere Anpassungen**: Passe die Zielwortzahlen in `chapter_word_targets.json` oder die `applyTo`‑Filter an deine spezifischen Bedürfnisse an. Erstelle bei Bedarf weitere `sections`‑Files, um besonders komplexe Abschnitte gesondert zu steuern.
+
+### Agenten‑Modus (CLI)
+
+Ein minimaler Orchestrator ist unter `agents/` enthalten und bietet eine einfache CLI:
+
+```bash
+python -m agents run-all 5_material_methods
+```
+
+Einzelne Schritte:
+
+- Plan: `python -m agents plan 5_material_methods`
+- Audit: `python -m agents audit 5_material_methods`
+- Execute: `python -m agents execute 5_material_methods`
+- Verify: `python -m agents verify 5_material_methods`
+
+Outputs werden nach `plans/`, `audit/`, `drafts/`, `verify/` geschrieben. Der Orchestrator nutzt die Prompts in `prompts/` und kann optional das Playbook `prompts/prompt_playbook.yaml` (falls vorhanden) auslesen.
