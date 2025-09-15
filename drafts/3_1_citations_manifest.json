@@ -1,0 +1,41 @@
+{
+  "section_id": "3.1 Epidemiologie",
+  "used_sources": [
+    {
+      "apa7": "Sung, H., Ferlay, J., Siegel, R. L., Laversanne, M., Soerjomataram, I., Jemal, A., & Bray, F. (2021). Global Cancer Statistics 2020.... CA Cancer J Clin, 71(3), 209–249.",
+      "doi": "https://doi.org/10.3322/caac.21660",
+      "pmid": "33538338",
+      "if": ">=5",
+      "year": 2021,
+      "used_in": ["Definition/Abgrenzung", "Global"],
+      "rationale": "Maßgebliche globale Inzidenz-/Mortalitätszahlen (GLOBOCAN 2020)."
+    },
+    {
+      "apa7": "Bray, F., Ferlay, J., Soerjomataram, I., Siegel, R. L., Torre, L. A., & Jemal, A. (2018). Global Cancer Statistics 2018.... CA Cancer J Clin, 68(6), 394–424.",
+      "doi": "https://doi.org/10.3322/caac.21492",
+      "pmid": "",
+      "if": ">=5",
+      "year": 2018,
+      "used_in": ["Definition/Abgrenzung", "Methodikvergleich"],
+      "rationale": "Vergleich/Trend und Methodik der GLOBOCAN‑Iterationen."
+    },
+    {
+      "apa7": "GBD 2019 Cancer Collaboration. (2022). Global Burden of 29 Cancers Worldwide in 2019.... JAMA Oncology, 8(3), 420–444.",
+      "doi": "https://doi.org/10.1001/jamaoncol.2021.6987",
+      "pmid": "",
+      "if": ">=5",
+      "year": 2022,
+      "used_in": ["Global"],
+      "rationale": "Trends 1990–2019; ergänzende Lastenmetrik."
+    },
+    {
+      "apa7": "Robert Koch‑Institut & Zentrum für Krebsregisterdaten. (2023). Krebs in Deutschland 2019/2020.",
+      "doi": "",
+      "pmid": "",
+      "if": "Registry",
+      "year": 2023,
+      "used_in": ["Deutschland"],
+      "rationale": "Neueste nationale Inzidenz-/Mortalitätskennzahlen."
+    }
+  ]
+}

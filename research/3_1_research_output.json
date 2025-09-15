@@ -1,0 +1,117 @@
+{
+  "section_id": "3.1 Epidemiologie",
+  "generated_date": "2025-09-10",
+  "queries": [
+    {
+      "name": "Global Cancer Statistics (HNSCC)",
+      "query": "(head and neck OR lip OR oral cavity OR pharynx OR larynx) AND (incidence OR mortality) AND (global OR worldwide) AND 2018:2025[dp]"
+    },
+    {
+      "name": "Germany RKI/ZfKD",
+      "query": "(Kopf-Hals OR Mundhöhle OR Pharynx OR Larynx) AND (Inzidenz OR Mortalität) AND (Deutschland) AND 2017:2025"
+    },
+    {
+      "name": "Age-standardized rates methodology",
+      "query": "(age-standardized rate OR ASR) AND (European standard population OR world standard) AND cancer"
+    }
+  ],
+  "inclusion_criteria": [
+    "Peer-reviewte Journals mit IF ≥ 5 für interpretative Aussagen",
+    "Offizielle Register/Behörden (WHO/IARC GLOBOCAN, RKI/ZfKD) für Primärzahlen",
+    "Aktualität bevorzugt (≥ 2018)"
+  ],
+  "exclusion_criteria": [
+    "Preprints, nicht peer-reviewte Quellen",
+    "Uneinheitliche Definitionen ohne Klarstellung"
+  ],
+  "sources": [
+    {
+      "type": "journal_review",
+      "apa7": "Sung, H., Ferlay, J., Siegel, R. L., Laversanne, M., Soerjomataram, I., Jemal, A., & Bray, F. (2021). Global Cancer Statistics 2020: GLOBOCAN Estimates of Incidence and Mortality Worldwide for 36 Cancers in 185 Countries. CA: A Cancer Journal for Clinicians, 71(3), 209–249.",
+      "doi": "https://doi.org/10.3322/caac.21660",
+      "pmid": "33538338",
+      "if_category": ">=5 (sehr hoch)",
+      "year": 2021,
+      "summary": "Aktuell maßgebliche globale Schätzungen (GLOBOCAN 2020) zu Inzidenz und Mortalität, inkl. subsites (Lippe/Mundhöhle, Pharynx, Larynx).",
+      "relevance_tags": ["global", "incidence", "mortality", "HNSCC_subsites"],
+      "if_source": "Journal/Publisher; weithin als High-IF bekannt"
+    },
+    {
+      "type": "journal_review",
+      "apa7": "Bray, F., Ferlay, J., Soerjomataram, I., Siegel, R. L., Torre, L. A., & Jemal, A. (2018). Global Cancer Statistics 2018: GLOBOCAN Estimates of Incidence and Mortality Worldwide for 36 Cancers in 185 Countries. CA: A Cancer Journal for Clinicians, 68(6), 394–424.",
+      "doi": "https://doi.org/10.3322/caac.21492",
+      "pmid": "",
+      "if_category": ">=5 (sehr hoch)",
+      "year": 2018,
+      "summary": "Vorherige GLOBOCAN-Iteration; nützlich für Trends und Methodikvergleich.",
+      "relevance_tags": ["global", "trend", "methodology"],
+      "if_source": "Journal/Publisher"
+    },
+    {
+      "type": "journal_analysis",
+      "apa7": "GBD 2019 Cancer Collaboration. (2022). Global Burden of 29 Cancers Worldwide in 2019: A Systematic Analysis for the Global Burden of Disease Study 2019. JAMA Oncology, 8(3), 420–444.",
+      "doi": "https://doi.org/10.1001/jamaoncol.2021.6987",
+      "pmid": "",
+      "if_category": ">=5 (hoch)",
+      "year": 2022,
+      "summary": "Systematische Lasten- und Trendanalyse (1990–2019) mit differenzierten Raten; ergänzend zu GLOBOCAN.",
+      "relevance_tags": ["global", "trend", "burden"],
+      "if_source": "Journal/Publisher"
+    },
+    {
+      "type": "registry",
+      "apa7": "IARC/WHO. (2020). GLOBOCAN 2020: Cancer Today – Lip, oral cavity; Pharynx; Larynx. International Agency for Research on Cancer.",
+      "doi": "",
+      "pmid": "",
+      "link": "https://gco.iarc.fr/today",
+      "if_category": "n/a (Registry)",
+      "year": 2020,
+      "summary": "Online-Factsheets mit Inzidenz- und Mortalitätskennzahlen für relevante Subsites.",
+      "relevance_tags": ["global", "registry", "subsites"],
+      "if_source": "IARC GLOBOCAN"
+    },
+    {
+      "type": "registry",
+      "apa7": "RKI & ZfKD. (2023). Krebs in Deutschland 2019/2020. Robert Koch-Institut, Zentrum für Krebsregisterdaten.",
+      "doi": "",
+      "pmid": "",
+      "link": "https://www.krebsdaten.de",
+      "if_category": "n/a (Registry)",
+      "year": 2023,
+      "summary": "Neueste nationale Kennzahlen (Inzidenz, Mortalität, ASR) für Deutschland, inkl. Geschlechterverteilung und Trends.",
+      "relevance_tags": ["germany", "registry", "ASR"],
+      "if_source": "Amtlicher Bericht"
+    },
+    {
+      "type": "journal_review",
+      "apa7": "Chaturvedi, A. K., et al. (2013). Human Papillomavirus and Rising Oropharyngeal Cancer Incidence in the United States. Journal of Clinical Oncology, 31(2), 210–216.",
+      "doi": "https://doi.org/10.1200/JCO.2012.43.5726",
+      "pmid": "23295746",
+      "if_category": ">=5 (hoch)",
+      "year": 2013,
+      "summary": "HPV-bezogene Trendkontexte (OPSCC); ergänzend zur globalen Epidemiologie, Brücke zu 3.2.",
+      "relevance_tags": ["HPV", "OPSCC", "trend"],
+      "if_source": "Journal/Publisher"
+    },
+    {
+      "type": "journal_review",
+      "apa7": "Shield, K. D., et al. (2017). The global incidence of lip, oral cavity, and pharyngeal cancers by subsite: A systematic review. Oral Oncology, 64, 74–84.",
+      "doi": "https://doi.org/10.1016/j.oraloncology.2016.12.015",
+      "pmid": "28027420",
+      "if_category": ">=5 (hoch)",
+      "year": 2017,
+      "summary": "Subsite-spezifische globale Muster und Unterschiede; unterstützt saubere Definitionen.",
+      "relevance_tags": ["subsites", "global", "method"],
+      "if_source": "Journal/Publisher"
+    }
+  ],
+  "gaps": [
+    "Exakte Geschlechteraufteilung bei Mortalität für alle Subsites in globalen Schätzungen (oft nur aggregiert).",
+    "Neueste RKI-Zeitreihen (bis 2022) ggf. noch in Vorabveröffentlichungen."
+  ],
+  "risks": [
+    "Definitionale Unterschiede (HNC vs. HNSCC; Einbezug Larynx) führen zu Nichtvergleichbarkeit.",
+    "Zeitverzögerungen zwischen Datenjahr und Publikationsjahr (Register vs. Review)."
+  ]
+}
+

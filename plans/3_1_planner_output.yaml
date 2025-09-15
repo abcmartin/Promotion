@@ -1,0 +1,102 @@
+planner_output:
+  section_id: "3.1 Epidemiologie"
+  parent_section: "3_background"
+  canonical_section_id: "3.1 Epidemiologie"
+  word_target: 1200
+  word_tolerance: 200
+  objectives:
+    - "Weltweite und deutsche Inzidenz- und Mortalitätsraten für HNSCC konsistent darstellen (WHO/IARC, RKI/ZfKD)."
+    - "Begriffs-/Kohortendefinitionen harmonisieren (ICD-10: C00–C14 ± C32; HNSCC vs. HNC)."
+    - "Geschlechts- und Trendunterschiede (Zeitfenster ca. 2010–2024) knapp kontextualisieren."
+    - "APA‑7‑konforme Belege mit DOI für peer-reviewte Quellen; offizielle Register als Primärdaten zulässig."
+  scope_and_boundaries:
+    include:
+      - "Globale Zahlen (GLOBOCAN/CA Cancer J Clin 2021; Updates wo verfügbar)."
+      - "Deutschland: RKI/ZfKD (neueste verfügbare Jahrgänge; Altersstandardisierung nennen)."
+    exclude:
+      - "Detaillierte Ätiologie/HPV‑Trendanalysen (-> 3.2)."
+      - "Therapiedetails (-> Kapitel 5/6)."
+  outline:
+    - heading: "Definition und Abgrenzung (HNSCC)"
+      target_words: 120
+      notes: "ICD‑10 Codes, Einschluss oraler Kavität, Pharynx; Larynx je nach Quelle separat kennzeichnen."
+    - heading: "Globale Epidemiologie (GLOBOCAN/CA Cancer J Clin)"
+      target_words: 520
+      notes: "Inzidenz, Mortalität, Geschlecht; Hinweise auf regionale Heterogenität."
+    - heading: "Deutschland (RKI/ZfKD)"
+      target_words: 420
+      notes: "Neueste ASR, absolute Zahlen, Geschlecht; Trend 1999–2022 kurz."
+    - heading: "Zusammenfassung und Implikationen"
+      target_words: 140
+      notes: "Knappe Einordnung, Anschlussfähigkeit an 3.2/3.5."
+  acceptance_criteria:
+    - "Wortzahl 1000–1400 (Ziel 1200)."
+    - "Mindestens 2 peer‑reviewte High‑IF‑Quellen (z. B. CA Cancer J Clin, Lancet Oncology)."
+    - "Offizielle Register (WHO/IARC, RKI/ZfKD) für Primärzahlen zulässig; Link/Identifier angeben."
+    - "Einheitliche Definitionen (ICD‑10) explizit genannt; bei Larynx Transparenz zur Ein-/Ausschlusslogik."
+    - "Mindestens 1 kompakte Tabelle (Inzidenz/Mortalität: Welt vs. Deutschland, m/w)."
+    - "APA‑7, DOI‑Pflicht für peer‑reviewte Quellen, konsistentes Zitierformat."
+  evidence_plan:
+    queries:
+      - name: "Global Cancer Statistics (HNSCC)"
+        query: "(head and neck squamous cell carcinoma OR HNSCC OR head and neck cancer) AND (incidence OR mortality OR epidemiology) AND (global OR worldwide) AND (2019:2025[dp])"
+        rationale: "Identifikation aktueller globaler Übersichten mit IF≥5."
+      - name: "Germany epidemiology (RKI/ZfKD)"
+        query: "(Kopf-Hals OR Mundhöhle OR Pharynx OR Larynx) AND (Inzidenz OR Mortalität) AND (Deutschland) AND (2017:2025)"
+        rationale: "Aktuelle nationale Registerdaten/Gesamtberichte."
+      - name: "Methodik der Altersstandardisierung"
+        query: "(age-standardized rate OR ASR) AND (European standard OR world standard) AND (head and neck)"
+        rationale: "Klarstellung zu ASR (ESP vs. World Std.)."
+    inclusion_criteria:
+      - "Peer‑reviewte Journals mit IF ≥ 5 für interpretative Statements."
+      - "Offizielle Register/Behördenberichte für Primärzahlen (WHO/IARC, RKI/ZfKD)."
+      - "Publikationsjahre bevorzugt ≥ 2018 (oder maßgebliche Standardwerke)."
+    exclusion_criteria:
+      - "Preprints, nicht peer‑reviewte Blogs/Slides."
+      - "Uneinheitliche Definitionen ohne Klarstellung."
+  risks_and_mitigations:
+    - risk: "Definitionale Inkonsistenz (HNC vs. HNSCC; Einbezug Larynx)."
+      mitigation: "Definition upfront; Transparenz zu inkludierten ICD‑10 Codes; Fußnote in Tabelle."
+    - risk: "Datenjahrgänge unterscheiden sich (lag WHO vs. nationale Register)."
+      mitigation: "Jahre explizit nennen; keine Quersummen bilden; Zeiträume angleichen, wo möglich."
+    - risk: "IF ≥ 5 für alle Quellen nicht erfüllbar bei Registern."
+      mitigation: "Register als Primärdaten (Ausnahme) + High‑IF‑Review für Kontext."
+  tasks:
+    - id: T1
+      desc: "Definition/ICD‑10 und Textstruktur fixieren; Wortbudget je Abschnitt verteilen."
+      done: false
+    - id: T2
+      desc: "Quellenrecherche global (CA Cancer J Clin, Lancet Oncology) und WHO/IARC."
+      done: false
+    - id: T3
+      desc: "RKI/ZfKD Kennzahlen extrahieren (neuester Bericht) inkl. ASR und Geschlechtertrennung."
+      done: false
+    - id: T4
+      desc: "Tabelle (Global vs. Deutschland; Inzidenz/Mortalität, m/w) erstellen."
+      done: false
+    - id: T5
+      desc: "Draft schreiben (1200±200), APA‑7 Zitate mit DOI, Registerlinks."
+      done: false
+    - id: T6
+      desc: "Self‑check: Wortziel, Konsistenz, Definitionen, Tabellen‑Fußnoten."
+      done: false
+  deliverables:
+    - "research_output (JSON) mit 10–18 Kernquellen."
+    - "draft_markdown (Abschnitt 3.1) + citations_manifest (JSON)."
+    - "auditor_report (JSON) & verification_result (JSON)."
+  dependencies:
+    - path: "/workspace/manuscript/3_background.md"
+      type: "manuscript_source"
+    - path: "/workspace/prompts/prompt_playbook.yaml"
+      type: "constraints"
+    - path: "/workspace/context/Referenzen"
+      type: "rag_corpus"
+  metrics:
+    word_count_target: 1200
+    word_count_tolerance: 200
+    min_peer_reviewed_high_if: 2
+    expected_tables: 1
+  style_and_format:
+    language: "Deutsch (formal‑wissenschaftlich)"
+    citation_style: "APA 7 (DOI‑Pflicht für Journals)"
+    formatting: "DIN A4, Arial 11pt, 1.5‑zeilig"

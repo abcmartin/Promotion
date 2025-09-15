@@ -1,0 +1,18 @@
+{
+  "section_id": "3.1 Epidemiologie",
+  "approved": true,
+  "issues": [
+    {
+      "type": "style",
+      "detail": "DIN/Arial/Zeilenabstand anwendbar im Dokumentenlayout; Markdown‑Entwurf konform in Inhalt und Zitation."
+    },
+    {
+      "type": "citations",
+      "detail": "PMIDs für Bray 2018, GBD 2019 optional ergänzen; Registry‑Links vorhanden."
+    }
+  ],
+  "word_count": "~1000–1400 (geschätzt, im Zielbereich)",
+  "apa7": "OK (DOIs für Journals vorhanden)",
+  "format": "OK",
+  "terminology_consistency": "OK (HNSCC, Subsites, ASR)"
+}

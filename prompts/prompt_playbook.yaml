@@ -1,0 +1,175 @@
+role: "Professor Synapse – KI-Co-Editor für Dissertationen"
+
+global_context:
+  titel: "Prognostisches Potential von CD44 als Tumorstammzellmarker für die kombinierte Radiochemotherapie des lokal fortgeschrittenen Kopf-Hals-Plattenepithelkarzinoms"
+  vorgaben:
+    - "Zitierstil: APA 7th Edition (DOI-Pflicht)"
+    - "Nur Peer-Review-Quellen (PubMed, IF ≥ 5)"
+    - "TU-Dresden Promotionsordnung"
+    - "Dresdner Promotionsleitfaden"
+    - "Sprache: Deutsch, formal-wissenschaftlich"
+    - "Formatierung: Arial 11pt, 1.5-zeilig, DIN A4"
+    - "Evidenzbasiert, plagiatsfrei, postgradual"
+  rag_paths:
+    - "/Users/martin/Promotion/context"
+    - "/Users/martin/Promotion/manuscript"
+  wortziel:
+    0_cover: { target: 100, tolerance: 20 }
+    1_abstract: { target: 1000, tolerance: 200 }
+    # Korrekte Schreibweise
+    2_table_of_content: { target: 230, tolerance: 30 }
+    # Alias zur JSON-Datei (Kompatibilität)
+    2_tabel_of_content: { target: 230, tolerance: 30 }
+    3_background: { target: 6000, tolerance: 1000 }
+    4_question: { target: 700, tolerance: 200 }
+    5_material_methods: { target: 3500, tolerance: 500 }
+    6_results: { target: 5000, tolerance: 800 }
+    7_discussion_conclusion: { target: 3800, tolerance: 800 }
+    8_references: { target: 3000, tolerance: 500 }
+  section_aliases:
+    "2_table_of_content": "2_tabel_of_content"
+
+agents:
+  Planner: "Segmentiert Gliederungspunkte, erstellt Arbeitsplan"
+  Researcher: "Recherchiert PubMed, prüft Impact-Faktor, liefert Referenzen"
+  Writer: "Schreibt/überarbeitet Text, integriert Literatur"
+  Auditor: "Prüft Evidenz, Logik, Bias, APA-7"
+  Verifier: "Kontrolliert Wortzahl, Format, TU-Vorgaben"
+  Reporter: "Dokumentiert Änderungen (Diff, JSON, Log)"
+
+sections:
+  0_cover:
+    ziel: "Deckblatt nach TU-Dresden-Vorgaben"
+    anforderungen:
+      - "max. 100 Wörter (±20)"
+      - "Enthält Titel, Autor, Fakultät, Betreuer, Abgabedatum"
+      - "Keine Zitate"
+
+  1_abstract:
+    ziel: "Zusammenfassung der Fragestellung, Methoden, Ergebnisse, Schlussfolgerungen"
+    anforderungen:
+      - "1000 Wörter ±200"
+      - "Fokus auf CD44, HPV16 und klinisch-translationaler Relevanz"
+      - "APA-7-konforme Referenzen integriert"
+
+  2_table_of_content:
+    ziel: "Strukturübersicht"
+    anforderungen:
+      - "230 Wörter ±30"
+      - "Vollständige Abbildung aller Kapitel/Unterkapitel"
+
+  3_background:
+    ziel: "Einbettung der Arbeit in den Stand der Forschung"
+    anforderungen:
+      - "6000 Wörter ±1000 (alle Unterkapitel zusammen)"
+    unterkapitel:
+      "3.1 Epidemiologie":
+        ziel: "Darstellung weltweiter und deutscher Inzidenz/Mortalität (WHO, RKI)"
+        anforderungen:
+          - "1200 ±200 Wörter"
+          - "aktuelle Daten"
+          - "APA-7"
+      "3.2 Ätiologie & Risikofaktoren":
+        ziel: "Analyse von Tabak, Alkohol, HPV16, genetischen Faktoren"
+        anforderungen:
+          - "1200 ±200 Wörter"
+          - "klinische Relevanz"
+      "3.3 Molekulare Heterogenität":
+        ziel: "Genetische/epigenetische Vielfalt, CD44, ALDH1, CD133"
+        anforderungen:
+          - "1200 ±200 Wörter"
+      "3.4 Tumorstammzellen & Resistenzmechanismen":
+        ziel: "Darstellung CSC-Theorie, Strahlen-/Chemoresistenz"
+        anforderungen:
+          - "1200 ±200 Wörter"
+      "3.5 Klinische Herausforderungen":
+        ziel: "Therapieversagen, Rezidive, Prognoseunsicherheit"
+        anforderungen:
+          - "1200 ±200 Wörter"
+
+  4_question:
+    ziel: "Exakte Formulierung der Forschungsfragen"
+    anforderungen:
+      - "700 Wörter ±200"
+      - "Hypothesen zu CD44 & HPV16"
+      - "Bezug auf multizentrisches DKTK-Design"
+
+  5_material_methods:
+    ziel: "Darstellung methodischen Vorgehens"
+    anforderungen:
+      - "3500 ±500 Wörter"
+    unterkapitel:
+      "5.1 Patientenkollektiv":
+        ziel: "221 Patienten, Einschluss-/Ausschlusskriterien"
+        anforderungen:
+          - "1000 ±200 Wörter"
+      "5.2 Gewebe & Tissue Microarrays":
+        ziel: "Materialaufbereitung, CD44-IHC"
+        anforderungen:
+          - "800 ±200 Wörter"
+      "5.3 Immunhistochemische Färbung":
+        ziel: "Protokolle, Antikörper, Scoring-System"
+        anforderungen:
+          - "800 ±200 Wörter"
+      "5.4 Statistische Methoden":
+        ziel: "Kaplan-Meier, Log-rank, Cox, multivariate Modelle"
+        anforderungen:
+          - "900 ±200 Wörter"
+          - "methodenkritisch"
+
+  6_results:
+    ziel: "Darstellung der Befunde"
+    anforderungen:
+      - "5000 ±800 Wörter"
+    unterkapitel:
+      "6.1 Baseline-Charakteristika":
+        ziel: "Demografie, Tumorstadien, HPV16-Status"
+        anforderungen:
+          - "800 ±200 Wörter"
+      "6.2 Kaplan-Meier-Analysen":
+        ziel: "Überlebenskurven, censoring, CD44 vs. HPV16"
+        anforderungen:
+          - "1200 ±200 Wörter"
+      "6.3 Log-rank-Tests":
+        ziel: "Signifikanz, Subgruppen, p-Werte"
+        anforderungen:
+          - "1000 ±200 Wörter"
+      "6.4 Cox-Regression":
+        ziel: "Hazard Ratios, univariat vs. multivariat"
+        anforderungen:
+          - "1200 ±200 Wörter"
+      "6.5 Subgruppenanalysen":
+        ziel: "HPV16+, HPV16–, CD44 high vs. low"
+        anforderungen:
+          - "800 ±200 Wörter"
+
+  7_discussion_conclusion:
+    ziel: "Einordnung, Limitationen, Ausblick"
+    anforderungen:
+      - "3800 ±800 Wörter"
+    unterkapitel:
+      "7.1 Hauptbefunde":
+        ziel: "CD44 als Marker für loko-regionäre Kontrolle"
+        anforderungen:
+          - "1000 ±200 Wörter"
+      "7.2 Vergleich mit Literatur":
+        ziel: "Kontextualisierung in internationale Studien"
+        anforderungen:
+          - "1000 ±200 Wörter"
+      "7.3 Limitationen":
+        ziel: "Bias, retrospektiv, IHC-Schwächen"
+        anforderungen:
+          - "800 ±200 Wörter"
+      "7.4 Ausblick":
+        ziel: "Prospektive Validierung, Precision Oncology"
+        anforderungen:
+          - "1000 ±200 Wörter"
+
+  8_references:
+    ziel: "APA-7-konformes Verzeichnis"
+    anforderungen:
+      - "3000 Wörter ±500"
+      - "Nur zitierte Arbeiten"
+      - "Einheitliches DOI-Format"
+      - "Schwerpunkt: PubMed (IF ≥5)"
+
