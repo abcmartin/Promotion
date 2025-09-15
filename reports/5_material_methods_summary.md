@@ -1,0 +1,4 @@
+- Abschnitt: `5_material_methods`
+- Wortzahl: 2563
+- Freigaben: Auditor=False, Verifier=False
+- Offene Punkte: 0

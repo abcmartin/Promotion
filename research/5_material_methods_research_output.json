@@ -1,0 +1,21 @@
+{
+  "section_id": "5_material_methods",
+  "queries": [
+    "(5 material methods) AND (head and neck squamous cell carcinoma OR HNSCC)",
+    "CD44 AND survival AND Cox AND (proportional hazards)",
+    "REMARK reporting guideline tumor markers"
+  ],
+  "inclusion_criteria": [
+    "Peer-Reviewed Journals",
+    "Impact Factor >= 5",
+    "HNSCC/CD44-Relevanz"
+  ],
+  "exclusion_criteria": [
+    "Preprints",
+    "Nicht-peer-reviewte Quellen"
+  ],
+  "sources": [],
+  "gaps": [],
+  "risks": [],
+  "generated_date": "2025-09-15T17:30:47Z"
+}
