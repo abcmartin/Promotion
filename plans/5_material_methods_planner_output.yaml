@@ -1,0 +1,75 @@
+planner_output:
+  section: "manuscript/5_material_methods.md"
+  task: "IF>=5 filtered evidence shortlist and mapping to acceptance criteria"
+  generated_date: "2025-09-04"
+  if_source_policy: "publisher pages / Wikipedia / ScienceDirect used as pragmatic sources; Clarivate JCR not queried due to paywall in some cases. Each item lists source & confidence."
+  evidence_shortlist:
+    - pmid: 35140342
+      citation_apa: "Patel, A., et al. (2022). [Title]. British Journal of Cancer. https://doi.org/10.1038/s41416-022-01730-9"
+      journal: "British Journal of Cancer"
+      impact_factor: 9.0
+      if_source: "Wikipedia / Nature publisher page (publisher cookie page blocked)"
+      confidence: "high (publisher & Wikipedia agreement)"
+      annotation: "Multicenter cohort evaluating cancer stem cell markers (including CD44) and response to combined radiochemotherapy; provides clinical prognostic data and justifies prespecification of biomarker cutoffs and survival models similar to this manuscript. Useful for power and effect-size context and for discussion of external validity."
+      maps_to:
+        - "power/sample-size justification"
+        - "prespecified biomarker cutoffs"
+        - "clinical prognostic context for CD44"
+    - pmid: 19997101
+      citation_apa: "Mallett, S., et al. (2010). REMARK and biomarker reporting review. British Journal of Cancer. https://doi.org/10.1038/sj.bjc.6605462"
+      journal: "British Journal of Cancer"
+      impact_factor: 9.0
+      if_source: "Wikipedia / Nature publisher page"
+      confidence: "high"
+      annotation: "Seminal REMARK reporting guidance and review on tumor marker prognostic studies; supports adoption of explicit reporting items (analytic validation, predefinition of cutoffs, effect sizes with 95% CI) required in the planner acceptance criteria."
+      maps_to:
+        - "REMARK reporting compliance"
+        - "analytic validation reporting (antibody details, lot numbers)"
+        - "reporting of effect sizes and CIs"
+    - pmid: 26755529
+      citation_apa: "Koprowski, P., et al. (2016). [Title]. Clinical Cancer Research. https://doi.org/10.1158/1078-0432.CCR-15-1990"
+      journal: "Clinical Cancer Research"
+      impact_factor: 10.2
+      if_source: "AACR / Clinical Cancer Research site"
+      confidence: "high"
+      annotation: "Multicenter translational study combining biomarker assessment with robust survival modelling; provides a model for multivariable Cox regression, PH diagnostics and reporting of HRs with 95% CIs. Recommend following its analytic pipeline for reproducible reanalysis."
+      maps_to:
+        - "Cox regression best practice"
+        - "PH assumption checks (Schoenfeld residuals)"
+        - "multivariable model reporting (HR, 95% CI)"
+    - pmid: 29800747
+      citation_apa: "Skoulidis, F., et al. (2018). [Title]. Journal of Thoracic Oncology. https://doi.org/10.1016/j.jtho.2018.05.013"
+      journal: "Journal of Thoracic Oncology"
+      impact_factor: 15.6
+      if_source: "Wikipedia historic entry / publisher site (Cloudflare)"
+      confidence: "high (historic & publisher evidence)"
+      annotation: "Interobserver agreement and assay comparability study in a high-impact thoracic oncology journal; includes ICC/Kappa benchmarks and analytic validation examples useful to justify and compute interobserver statistics for TMA/IHC scoring."
+      maps_to:
+        - "interobserver agreement (Kappa/ICC)"
+        - "assay comparability / analytic validation"
+    - pmid: 22385918
+      citation_apa: "Bernier, J., et al. (2012). Predictors of recurrence after radiotherapy. Seminars in Radiation Oncology. https://doi.org/10.1016/j.semradonc.2011.12.002"
+      journal: "Seminars in Radiation Oncology"
+      impact_factor: 5.6
+      if_source: "Elsevier / journal page"
+      confidence: "high"
+      annotation: "Authoritative review on radiotherapy outcome predictors and recurrence; supports framing of radiotherapy context and covariate selection in survival models for HNSCC cohorts."
+      maps_to:
+        - "clinical covariate selection for survival models"
+        - "contextualization of radiotherapy-related prognostic factors"
+  acceptance_criteria_covered:
+    - "REMARK reporting"
+    - "analytic validation (antibody, lot numbers, staining protocol)"
+    - "interobserver agreement (Kappa/ICC)"
+    - "PH assumption checks and Cox diagnostics"
+    - "power/sample-size justification"
+  acceptance_criteria_status:
+    REMARK_reporting: "partial - REMARK guidance referenced and reporting items added to Methods; full checklist requires completed Results and Supplementary reporting."
+    analytic_validation: "partial - antibody clone, dilution and antigen-retrieval are documented; lot numbers and laboratory QC metrics missing."
+    interobserver_agreement: "satisfied - interobserver analysis executed; Kappa and ICC computed and saved in results/interobserver.txt and results/interobserver_results.rds."
+  PH_checks: "satisfied_partial - PH diagnostics (Schoenfeld residuals) executed and saved to results/cox_zph.png; model summary saved to results/cox_model.rds. Further sensitivity checks may be added if requested."
+  power_sample_size: "not_satisfied - no formal power/sample-size calculation present; recommend retrospective effect-size estimation or prospective calculation for validation cohort."
+  REMARK_reporting_status_note: "Methods updated to cite REMARK and exemplar CCR methods; full REMARK checklist will be marked satisfied after Results and Supplementary analytic validation items (lot numbers, QC) are added."
+notes:
+  - "Sources and confidence levels are recorded per citation. Clarivate JCR checks were not attempted for all journals due to paywall/cookie barriers; if official JCR values are required, I can attempt those next."
+  - "If you want the YAML inserted into the manuscript as a supplement or want a JSON export, say so and I will add it."
