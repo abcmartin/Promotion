@@ -1,0 +1,13 @@
+{
+  "section_id": "manuscript/5_material_methods.md",
+  "approved": false,
+  "issues_remaining": [
+    {
+      "severity": "minor",
+      "issue": "Word count 2490 outside [3000, 4000]",
+      "fix": "Adjust section length"
+    }
+  ],
+  "word_count": 2490,
+  "word_target": 3500
+}

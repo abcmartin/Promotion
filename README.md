@@ -18,3 +18,22 @@ Dieses Verzeichnis enthält eine Sammlung von **Custom Instructions** und **Prom
 3. **Chat‑Konfiguration**: In Copilot Chat kannst du gezielt einzelne Instructions anhängen (Configure Chat → Instructions) oder die automatische Anwendung über die `applyTo`‑Muster nutzen.
 4. **Kapitelweise Arbeit**: Befolge die Workflows Planner → Auditor → Executor → Verifier. Nutze die Prompts aus dem `prompts`‑Ordner als Startpunkt für deine Chat‑Interaktionen.
 5. **Weitere Anpassungen**: Passe die Zielwortzahlen in `chapter_word_targets.json` oder die `applyTo`‑Filter an deine spezifischen Bedürfnisse an. Erstelle bei Bedarf weitere `sections`‑Files, um besonders komplexe Abschnitte gesondert zu steuern.
+
+### Agenten‑Modus (Multi‑Agent‑Workflow)
+
+- Ausführung lokal:
+
+  python -m agents plan manuscript/5_material_methods.md | cat
+
+  python -m agents audit manuscript/5_material_methods.md | cat
+
+  python -m agents verify manuscript/5_material_methods.md | cat
+
+  python -m agents report manuscript/5_material_methods.md | cat
+
+- Artefakte:
+  - Auditor‑Report: `audit/5_material_methods.md_auditor_report.json`
+  - Verifier‑Result: `verify/5_material_methods.md_verification_result.json`
+  - Konsolidierter Report: `reports/5_material_methods.md_report.json`
+
+Hinweis: Dies ist ein minimales Gerüst. Die Rollen Planner, Auditor, Executor, Verifier und Reporter werden iterativ erweitert (APA‑7‑Checks, DOI/PMID‑Validierung, Wortziel‑Prüfungen, Change‑Logs).
