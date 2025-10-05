@@ -8,7 +8,11 @@ MANUSCRIPT_DIR = ROOT / 'manuscript'
 BIB_DIR = ROOT / 'context' / 'Referenzen'
 
 WORD_TARGETS = {
-    '1_abstract.md': (250, 10),  # target, tolerance
+    # filename -> list of (section_header_regex, target, tol)
+    '1_abstract.md': [
+        (r'^##\s+Kurzfassung\s*$', 275, 50),
+        (r'^##\s+Abstract\s*$', 275, 50),
+    ],
 }
 
 DOI_PATTERN = re.compile(r"10\.\d{4,9}/[-._;()/:A-Z0-9]+", re.I)
@@ -20,16 +24,36 @@ def count_words(text: str) -> int:
     return len(words)
 
 
+def split_sections(text: str, headers: list[str]):
+    # returns dict header->section_text by regex header list (order matters)
+    indices = []
+    for pattern in headers:
+        m = re.search(pattern, text, re.M)
+        if m:
+            indices.append((m.start(), pattern))
+    indices.sort()
+    sections = {}
+    for i, (start, pattern) in enumerate(indices):
+        end = indices[i + 1][0] if i + 1 < len(indices) else len(text)
+        sections[pattern] = text[start:end]
+    return sections
+
+
 def validate_word_counts():
     results = []
-    for fname, (target, tol) in WORD_TARGETS.items():
+    for fname, specs in WORD_TARGETS.items():
         fpath = MANUSCRIPT_DIR / fname
         if not fpath.exists():
             results.append((fname, 'missing'))
             continue
-        n = count_words(fpath.read_text(encoding='utf-8', errors='ignore'))
-        ok = abs(n - target) <= tol
-        results.append((fname, n, target, tol, ok))
+        text = fpath.read_text(encoding='utf-8', errors='ignore')
+        headers = [pat for pat, _, _ in specs]
+        sections = split_sections(text, headers)
+        for pat, target, tol in specs:
+            sec = sections.get(pat, '')
+            n = count_words(sec)
+            ok = (n != 0) and (abs(n - target) <= tol)
+            results.append((fname, pat, n, target, tol, ok))
     return results
 
 
@@ -44,7 +68,7 @@ def scan_references_for_doi():
             content = bib.read_text(encoding='utf-8', errors='ignore')
         except Exception:
             continue
-        for m in re.finditer(r"doi\s*=\s*[{\"]([^}\"]+)", content, re.I):
+    for m in re.finditer(r"doi\s*=\s*[{\"]\s*([^}\"\s]+)\s*", content, re.I):
             dois.add(m.group(1).strip())
     return dois
 
