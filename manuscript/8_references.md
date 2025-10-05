@@ -1,4 +1,4 @@
-# Kapitle 8: Literaturverzeichnis
+# Kapitel 8: Literaturverzeichnis
 
 Uncategorized References
 

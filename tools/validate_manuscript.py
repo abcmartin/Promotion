@@ -17,6 +17,17 @@ WORD_TARGETS = {
 
 DOI_PATTERN = re.compile(r"10\.\d{4,9}/[-._;()/:A-Z0-9]+", re.I)
 APA_URL_PATTERN = re.compile(r"https?://doi\.org/10\.", re.I)
+ACCEPTABLE_URL_PATTERNS = [
+    re.compile(r"ncbi\.nlm\.nih\.gov/pubmed", re.I),
+    re.compile(r"books\.google", re.I),
+    re.compile(r"onlinelibrary\.wiley\.com/doi", re.I),
+    re.compile(r"acsjournals\.onlinelibrary\.wiley\.com/doi", re.I),
+    re.compile(r"nejm\.org/doi", re.I),
+    re.compile(r"tandfonline\.com/doi", re.I),
+    re.compile(r"link\.springer\.com", re.I),
+    re.compile(r"nature\.com/articles", re.I),
+    re.compile(r"science\.org/doi", re.I),
+]
 
 
 def count_words(text: str) -> int:
@@ -61,6 +72,12 @@ def extract_dois_from_text(text: str):
     return set(DOI_PATTERN.findall(text))
 
 
+def normalize_doi(doi: str) -> str:
+    s = doi.strip().lower()
+    s = re.sub(r"[)\].,;]+$", "", s)
+    return s
+
+
 def scan_references_for_doi():
     dois = set()
     for bib in BIB_DIR.glob('*.bib'):
@@ -68,8 +85,8 @@ def scan_references_for_doi():
             content = bib.read_text(encoding='utf-8', errors='ignore')
         except Exception:
             continue
-    for m in re.finditer(r"doi\s*=\s*[{\"]\s*([^}\"\s]+)\s*", content, re.I):
-            dois.add(m.group(1).strip())
+        for m in re.finditer(r"doi\s*=\s*[{\"]\s*([^}\"\s]+)\s*", content, re.I):
+            dois.add(normalize_doi(m.group(1)))
     return dois
 
 
@@ -84,12 +101,16 @@ def validate_doi_presence():
     issues = []
     for i, ln in enumerate(lines, 1):
         if re.search(r"\*\w+\*", ln) or re.search(r"\(\d{4}\)", ln):
-            has_doi = bool(DOI_PATTERN.search(ln) or APA_URL_PATTERN.search(ln))
-            if not has_doi:
+            has_resolver = bool(
+                DOI_PATTERN.search(ln)
+                or APA_URL_PATTERN.search(ln)
+                or any(p.search(ln) for p in ACCEPTABLE_URL_PATTERNS)
+            )
+            if not has_resolver:
                 issues.append((i, ln[:200]))
     bib_dois = scan_references_for_doi()
-    mentioned_dois = extract_dois_from_text(text)
-    missing_in_bib = [d for d in mentioned_dois if d not in bib_dois]
+    mentioned_dois = {normalize_doi(d) for d in extract_dois_from_text(text)}
+    missing_in_bib = [d for d in sorted(mentioned_dois) if d not in bib_dois]
     return {
         'lines_missing_doi': issues,
         'missing_in_bib': missing_in_bib,
