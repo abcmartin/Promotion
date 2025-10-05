@@ -1,0 +1,120 @@
+#!/usr/bin/env python3
+import re
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+MANUSCRIPT_DIR = ROOT / 'manuscript'
+BIB_DIR = ROOT / 'context' / 'Referenzen'
+
+WORD_TARGETS = {
+    '1_abstract.md': (250, 10),  # target, tolerance
+}
+
+DOI_PATTERN = re.compile(r"10\.\d{4,9}/[-._;()/:A-Z0-9]+", re.I)
+APA_URL_PATTERN = re.compile(r"https?://doi\.org/10\.", re.I)
+
+
+def count_words(text: str) -> int:
+    words = re.findall(r"\b\w+\b", text)
+    return len(words)
+
+
+def validate_word_counts():
+    results = []
+    for fname, (target, tol) in WORD_TARGETS.items():
+        fpath = MANUSCRIPT_DIR / fname
+        if not fpath.exists():
+            results.append((fname, 'missing'))
+            continue
+        n = count_words(fpath.read_text(encoding='utf-8', errors='ignore'))
+        ok = abs(n - target) <= tol
+        results.append((fname, n, target, tol, ok))
+    return results
+
+
+def extract_dois_from_text(text: str):
+    return set(DOI_PATTERN.findall(text))
+
+
+def scan_references_for_doi():
+    dois = set()
+    for bib in BIB_DIR.glob('*.bib'):
+        try:
+            content = bib.read_text(encoding='utf-8', errors='ignore')
+        except Exception:
+            continue
+        for m in re.finditer(r"doi\s*=\s*[{\"]([^}\"]+)", content, re.I):
+            dois.add(m.group(1).strip())
+    return dois
+
+
+def validate_doi_presence():
+    # Check that each reference URL contains a DOI resolver or raw DOI mention
+    ref_file = MANUSCRIPT_DIR / '8_references.md'
+    if not ref_file.exists():
+        return {'status': 'missing_references'}
+    text = ref_file.read_text(encoding='utf-8', errors='ignore')
+    lines = [ln for ln in text.splitlines() if ln.strip()]
+    # simple heuristic: lines that look like references should contain a DOI
+    issues = []
+    for i, ln in enumerate(lines, 1):
+        if re.search(r"\*\w+\*", ln) or re.search(r"\(\d{4}\)", ln):
+            has_doi = bool(DOI_PATTERN.search(ln) or APA_URL_PATTERN.search(ln))
+            if not has_doi:
+                issues.append((i, ln[:200]))
+    bib_dois = scan_references_for_doi()
+    mentioned_dois = extract_dois_from_text(text)
+    missing_in_bib = [d for d in mentioned_dois if d not in bib_dois]
+    return {
+        'lines_missing_doi': issues,
+        'missing_in_bib': missing_in_bib,
+        'bib_files': sorted(str(p) for p in BIB_DIR.glob('*.bib')),
+    }
+
+
+def crossref_toc():
+    toc = MANUSCRIPT_DIR / '2_tabel_of_content.md'
+    if not toc.exists():
+        return {'status': 'missing_toc'}
+    text = toc.read_text(encoding='utf-8', errors='ignore')
+    anchors = re.findall(r"\(#([^)]+)\)", text)
+    files = {p.name: p for p in MANUSCRIPT_DIR.glob('*.md')}
+    # crude check: anchor exists as a corresponding H1/H2 slug in any file
+    def sluggify(s: str) -> str:
+        s = s.lower()
+        s = re.sub(r"[^a-z0-9\- ]+", '', s)
+        s = s.replace(' ', '-')
+        return s
+    problems = []
+    for anchor in set(anchors):
+        found = False
+        for p in files.values():
+            t = p.read_text(encoding='utf-8', errors='ignore')
+            for hdr in re.findall(r"^#{1,6}\s+(.+)$", t, re.M):
+                if sluggify(hdr) == anchor:
+                    found = True
+                    break
+            if found:
+                break
+        if not found:
+            problems.append(anchor)
+    return {'unresolved_anchors': problems}
+
+
+def main():
+    wc = validate_word_counts()
+    doi = validate_doi_presence()
+    xref = crossref_toc()
+
+    print('WORD_COUNTS')
+    for item in wc:
+        print(item)
+    print('\nDOI_VALIDATION')
+    print(doi)
+    print('\nTOC_CROSSREF')
+    print(xref)
+
+
+if __name__ == '__main__':
+    sys.exit(main())

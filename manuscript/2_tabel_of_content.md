@@ -46,3 +46,4 @@
 
         - [5.2.3 Tumorstammzellen als Biomarker für die Individualisierung in der Strahlentherapie](#5-2-3-tumorstammzellen-als-biomarker-für-die-individualisierung-in-der-strahlentherapie)
         - [5.2.4 Limitationen der Studie](#5-2-4-limitationen-der-studie)
+ - [6 Methodischer Rahmen](#methodischer-rahmen)
