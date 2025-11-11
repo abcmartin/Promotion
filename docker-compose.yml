@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  builder:
+    build: ./docker
+    volumes:
+      - .:/app
+    command: make html
+  editor:
+    build: ./editor
+    command: npm run dev

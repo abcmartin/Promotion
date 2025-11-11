@@ -1,0 +1,35 @@
+name: manuscript-build
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: |
+          echo "install build deps here (pandoc/manubot/latex)"
+
+      - name: Build manuscript
+        run: |
+          make html
+          make pdf
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: manuscript-output
+          path: |
+            public
+            output

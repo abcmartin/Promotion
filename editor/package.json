@@ -1,0 +1,10 @@
+{
+  "name": "cd44-manus-editor",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "echo \"Start editor here (integrate manubot-ai-editor)\"",
+    "build": "echo \"Build editor\""
+  },
+  "description": "TODO: Replace with the actual editor from manubot-ai-editor and configure content access via environment variables or configurable paths."
+}
