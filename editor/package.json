@@ -1,0 +1,9 @@
+{
+  "name": "cd44-manus-editor",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "echo \"Start editor here (integrate manubot-ai-editor)\"",
+    "build": "echo \"Build editor\""
+  }
+}
