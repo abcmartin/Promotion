@@ -7,4 +7,6 @@
     "build": "echo \"Build editor\""
   },
   "description": "TODO: Replace with the actual editor from manubot-ai-editor and configure content access via environment variables or configurable paths."
+=======
+  }
 }
