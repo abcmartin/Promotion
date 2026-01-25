@@ -1,0 +1,20 @@
+global_context:
+  section_aliases:
+    "5_material_methods": "5_material_methods"
+    "mat_methods": "5_material_methods"
+    "3_background": "3_background"
+    "background": "3_background"
+  
+  wortziel:
+    "5_material_methods":
+      min: 3000
+      target: 3500
+      max: 4000
+    "3_background":
+      min: 5500
+      target: 6000
+      max: 6500
+    "1_abstract":
+      min: 250
+      target: 300
+      max: 350
