@@ -293,8 +293,9 @@ Um zu untersuchen, ob die Proteinexpression von CD44 einen prognostischen Tumors
 
 **Tabelle 5‑10: Hazard Ratio ist ein deskriptives Maß für das Einflussrisiko im Verhältnis zur Referenzgruppe**
 
-| HR ≈ 1 | Ereignisrisiko in beiden Gruppen ungefähr gleich |
+| Hazard Ratio | Interpretation |
 | --- | --- |
+| HR ≈ 1 | Ereignisrisiko in beiden Gruppen ungefähr gleich |
 | HR > 1 | Ereignisrisiko ist im Vergleich zur Referenzgruppe erhöht — schlechteres Überleben (Risikosteigerung) |
 | HR < 1 | Ereignisrisiko ist im Vergleich zur Referenzgruppe reduziert — besseres Überleben (Risikoreduktion) |
 
