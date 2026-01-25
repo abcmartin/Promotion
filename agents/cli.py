@@ -1,9 +1,13 @@
 import argparse
 import json
 import os
+import re
 import sys
 from datetime import datetime
 from typing import Any, Dict, Optional
+
+from . import chunker
+from .config import load_playbook
 
 
 def _now_iso() -> str:
@@ -21,44 +25,79 @@ def _write_text(path: str, content: str) -> None:
         f.write(content)
 
 
-def _load_yaml(path: str) -> Optional[Dict[str, Any]]:
-    try:
-        import yaml  # type: ignore
-    except Exception:
-        return None
-    with open(path, "r", encoding="utf-8") as f:
-        return yaml.safe_load(f)
-
-
 def _save_json(path: str, data: Dict[str, Any]) -> None:
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
+def _normalize_section_id(section_id: str) -> str:
+    """
+    Normalize section_id to prevent path traversal and ensure consistent format.
+    Returns a safe section identifier without manuscript/ prefix or .md suffix.
+    """
+    # Remove any directory traversal attempts
+    section_id = section_id.replace("..", "")
+    
+    # Remove manuscript/ prefix if present (before converting slashes)
+    manuscript_prefix = "manuscript/"
+    if section_id.startswith(manuscript_prefix):
+        section_id = section_id[len(manuscript_prefix):]
+    
+    # Remove .md suffix if present
+    if section_id.endswith(".md"):
+        section_id = section_id[:-3]
+    
+    # Now replace any remaining path separators
+    section_id = section_id.replace("/", "_").replace("\\", "_")
+    
+    # Ensure only safe characters (alphanumeric, underscore, hyphen)
+    section_id = re.sub(r'[^a-zA-Z0-9_-]', '_', section_id)
+    
+    return section_id
+
+
+def _resolve_section_path(section_id: str) -> str:
+    """
+    Resolve section_id to absolute manuscript path.
+    Normalizes input and constructs consistent path under manuscript/.
+    """
+    normalized_id = _normalize_section_id(section_id)
+    return os.path.abspath(os.path.join("manuscript", f"{normalized_id}.md"))
+
+
 def cmd_plan(section_id: str) -> int:
-    # Pass-through: read prompts/planner_prompt.md and create a stub plan
-    prompt = _read_text(os.path.abspath("prompts/planner_prompt.md"))
+    """Plan phase: Generate planning artifacts for a section."""
+    # Normalize section_id for artifact naming
+    normalized_id = _normalize_section_id(section_id)
+    section_path = _resolve_section_path(section_id)
+    
+    # Load playbook if available
+    playbook = load_playbook(".")
+    
     plan = {
         "planner_output": {
-            "section": f"manuscript/{section_id}.md" if section_id.endswith(".md") is False else section_id,
+            "section": section_path,
             "task": "Auto-generated plan (stub)",
             "generated_date": _now_iso(),
         }
     }
-    _save_json(os.path.abspath(f"plans/{section_id}_planner_output.json"), plan)
+    _save_json(os.path.abspath(f"plans/{normalized_id}_planner_output.json"), plan)
+    
     # Also copy existing curated YAML if present to plans/
     curated_yaml = os.path.abspath("planner_output.yaml")
     if os.path.exists(curated_yaml):
         content = _read_text(curated_yaml)
-        _write_text(os.path.abspath(f"plans/{section_id}_planner_output.yaml"), content)
+        _write_text(os.path.abspath(f"plans/{normalized_id}_planner_output.yaml"), content)
     return 0
 
 
 def cmd_audit(section_id: str) -> int:
-    prompt = _read_text(os.path.abspath("prompts/auditor_prompt.md"))
+    """Audit phase: Generate audit report for a section."""
+    normalized_id = _normalize_section_id(section_id)
+    
     report = {
-        "section_id": section_id,
+        "section_id": normalized_id,
         "approved": False,
         "findings": [
             {
@@ -70,20 +109,23 @@ def cmd_audit(section_id: str) -> int:
         ],
         "generated_date": _now_iso(),
     }
-    _save_json(os.path.abspath(f"audit/{section_id}_auditor_report.json"), report)
+    _save_json(os.path.abspath(f"audit/{normalized_id}_auditor_report.json"), report)
     return 0
 
 
 def cmd_execute(section_id: str) -> int:
-    prompt = _read_text(os.path.abspath("prompts/executor_prompt.md"))
-    # Minimal draft passthrough: copy manuscript file to drafts with timestamp note
-    src_path = os.path.abspath(f"manuscript/{section_id}.md") if not section_id.endswith(".md") else os.path.abspath(f"manuscript/{section_id}")
+    """Execute phase: Generate draft and change log for a section."""
+    normalized_id = _normalize_section_id(section_id)
+    src_path = _resolve_section_path(section_id)
+    
     if os.path.exists(src_path):
         draft = _read_text(src_path)
     else:
-        draft = f"# {section_id}\n\n[Stub‑Entwurf erzeugt { _now_iso() }]\n"
-    _write_text(os.path.abspath(f"drafts/{section_id}_draft.md"), draft)
-    # Minimal change log
+        draft = f"# {normalized_id}\n\n[Stub‑Entwurf erzeugt { _now_iso() }]\n"
+    
+    _write_text(os.path.abspath(f"drafts/{normalized_id}_draft.md"), draft)
+    
+    # Change log schema aligned with agents.diff_logging
     change_log = {
         "generated_date": _now_iso(),
         "changes": [
@@ -91,18 +133,22 @@ def cmd_execute(section_id: str) -> int:
                 "loc": "full",
                 "change_type": "rewrite",
                 "rationale": "Stub‑Executor hat Entwurf gespiegelt.",
-                "sources_added": []
+                "sources_added": [],
+                "old_snippet": "",
+                "new_snippet": draft[:200] + "..." if len(draft) > 200 else draft
             }
         ]
     }
-    _save_json(os.path.abspath(f"drafts/{section_id}_change_log.json"), change_log)
+    _save_json(os.path.abspath(f"drafts/{normalized_id}_change_log.json"), change_log)
     return 0
 
 
 def cmd_verify(section_id: str) -> int:
-    prompt = _read_text(os.path.abspath("prompts/verifier_prompt.md"))
+    """Verify phase: Generate verification report for a section."""
+    normalized_id = _normalize_section_id(section_id)
+    
     verification = {
-        "section_id": section_id,
+        "section_id": normalized_id,
         "approved": False,
         "issues_remaining": [
             "Stub‑Verifier: APA‑Konformität nicht geprüft",
@@ -111,11 +157,12 @@ def cmd_verify(section_id: str) -> int:
         "release_notes": "Dies ist ein Platzhalter‑Verifikationsbericht.",
         "generated_date": _now_iso(),
     }
-    _save_json(os.path.abspath(f"verify/{section_id}_verification_result.json"), verification)
+    _save_json(os.path.abspath(f"verify/{normalized_id}_verification_result.json"), verification)
     return 0
 
 
 def cmd_run_all(section_id: str) -> int:
+    """Run all phases sequentially: plan → audit → execute → verify."""
     rc = cmd_plan(section_id)
     if rc != 0:
         return rc

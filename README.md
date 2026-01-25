@@ -34,4 +34,4 @@ Einzelne Schritte:
 - Execute: `python -m agents execute 5_material_methods`
 - Verify: `python -m agents verify 5_material_methods`
 
-Outputs werden nach `plans/`, `audit/`, `drafts/`, `verify/` geschrieben. Der Orchestrator nutzt die Prompts in `prompts/` und kann optional das Playbook `prompts/prompt_playbook.yaml` (falls vorhanden) auslesen.
+Outputs werden nach `plans/`, `audit/`, `drafts/`, `verify/` geschrieben. Der Orchestrator nutzt die Prompts in `prompts/` und lädt optional das Playbook `prompts/prompt_playbook.yaml` (falls vorhanden) im Plan-Schritt.
