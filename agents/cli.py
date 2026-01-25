@@ -5,6 +5,8 @@ import sys
 from datetime import datetime
 from typing import Any, Dict, Optional
 
+from agents.config import load_playbook, canonical_section_id
+
 
 def _now_iso() -> str:
     return datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -37,15 +39,23 @@ def _save_json(path: str, data: Dict[str, Any]) -> None:
 
 
 def cmd_plan(section_id: str) -> int:
+    # Load optional playbook
+    playbook = load_playbook()
+    canonical_id = canonical_section_id(section_id, playbook)
+    
     # Pass-through: read prompts/planner_prompt.md and create a stub plan
     prompt = _read_text(os.path.abspath("prompts/planner_prompt.md"))
     plan = {
         "planner_output": {
-            "section": f"manuscript/{section_id}.md" if section_id.endswith(".md") is False else section_id,
+            "section": f"manuscript/{canonical_id}.md" if canonical_id.endswith(".md") is False else canonical_id,
             "task": "Auto-generated plan (stub)",
             "generated_date": _now_iso(),
         }
     }
+    # Add word target from playbook if available
+    if canonical_id in playbook.word_targets:
+        plan["planner_output"]["word_target"] = playbook.word_targets[canonical_id]
+    
     _save_json(os.path.abspath(f"plans/{section_id}_planner_output.json"), plan)
     # Also copy existing curated YAML if present to plans/
     curated_yaml = os.path.abspath("planner_output.yaml")
@@ -56,9 +66,13 @@ def cmd_plan(section_id: str) -> int:
 
 
 def cmd_audit(section_id: str) -> int:
+    # Load optional playbook
+    playbook = load_playbook()
+    canonical_id = canonical_section_id(section_id, playbook)
+    
     prompt = _read_text(os.path.abspath("prompts/auditor_prompt.md"))
     report = {
-        "section_id": section_id,
+        "section_id": canonical_id,
         "approved": False,
         "findings": [
             {
@@ -75,13 +89,17 @@ def cmd_audit(section_id: str) -> int:
 
 
 def cmd_execute(section_id: str) -> int:
+    # Load optional playbook
+    playbook = load_playbook()
+    canonical_id = canonical_section_id(section_id, playbook)
+    
     prompt = _read_text(os.path.abspath("prompts/executor_prompt.md"))
     # Minimal draft passthrough: copy manuscript file to drafts with timestamp note
-    src_path = os.path.abspath(f"manuscript/{section_id}.md") if not section_id.endswith(".md") else os.path.abspath(f"manuscript/{section_id}")
+    src_path = os.path.abspath(f"manuscript/{canonical_id}.md") if not canonical_id.endswith(".md") else os.path.abspath(f"manuscript/{canonical_id}")
     if os.path.exists(src_path):
         draft = _read_text(src_path)
     else:
-        draft = f"# {section_id}\n\n[Stub‑Entwurf erzeugt { _now_iso() }]\n"
+        draft = f"# {canonical_id}\n\n[Stub‑Entwurf erzeugt { _now_iso() }]\n"
     _write_text(os.path.abspath(f"drafts/{section_id}_draft.md"), draft)
     # Minimal change log
     change_log = {
@@ -100,9 +118,13 @@ def cmd_execute(section_id: str) -> int:
 
 
 def cmd_verify(section_id: str) -> int:
+    # Load optional playbook
+    playbook = load_playbook()
+    canonical_id = canonical_section_id(section_id, playbook)
+    
     prompt = _read_text(os.path.abspath("prompts/verifier_prompt.md"))
     verification = {
-        "section_id": section_id,
+        "section_id": canonical_id,
         "approved": False,
         "issues_remaining": [
             "Stub‑Verifier: APA‑Konformität nicht geprüft",
@@ -111,6 +133,10 @@ def cmd_verify(section_id: str) -> int:
         "release_notes": "Dies ist ein Platzhalter‑Verifikationsbericht.",
         "generated_date": _now_iso(),
     }
+    # Add word target from playbook if available
+    if canonical_id in playbook.word_targets:
+        verification["word_target"] = playbook.word_targets[canonical_id]
+    
     _save_json(os.path.abspath(f"verify/{section_id}_verification_result.json"), verification)
     return 0
 
